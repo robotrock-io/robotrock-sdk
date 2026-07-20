@@ -1,0 +1,176 @@
+{
+  "name": "robotrock",
+  "version": "1.8.0",
+  "description": "Human-in-the-loop approval workflows for AI agents",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./trigger": {
+      "types": "./dist/trigger/index.d.ts",
+      "import": "./dist/trigger/index.js"
+    },
+    "./ai": {
+      "types": "./dist/ai/index.d.ts",
+      "import": "./dist/ai/index.js"
+    },
+    "./ai/trigger": {
+      "types": "./dist/ai/trigger.d.ts",
+      "import": "./dist/ai/trigger.js"
+    },
+    "./workflow": {
+      "types": "./dist/workflow/index.d.ts",
+      "import": "./dist/workflow/index.js"
+    },
+    "./ai/workflow": {
+      "types": "./dist/ai/workflow.d.ts",
+      "import": "./dist/ai/workflow.js"
+    },
+    "./eve": {
+      "types": "./dist/eve/index.d.ts",
+      "import": "./dist/eve/index.js"
+    },
+    "./eve/agent": {
+      "types": "./dist/eve/agent/index.d.ts",
+      "import": "./dist/eve/agent/index.js"
+    },
+    "./eve/tools": {
+      "types": "./dist/eve/tools/index.d.ts",
+      "import": "./dist/eve/tools/index.js"
+    },
+    "./eve/tools/inbox": {
+      "types": "./dist/eve/tools/inbox/index.d.ts",
+      "import": "./dist/eve/tools/inbox/index.js"
+    },
+    "./eve/tools/inbox/create-task": {
+      "types": "./dist/eve/tools/inbox/create-task.d.ts",
+      "import": "./dist/eve/tools/inbox/create-task.js"
+    },
+    "./eve/tools/identity": {
+      "types": "./dist/eve/tools/identity/index.d.ts",
+      "import": "./dist/eve/tools/identity/index.js"
+    },
+    "./eve/tools/identity/whoami": {
+      "types": "./dist/eve/tools/identity/whoami.d.ts",
+      "import": "./dist/eve/tools/identity/whoami.js"
+    },
+    "./eve/tools/identity/my-access": {
+      "types": "./dist/eve/tools/identity/my-access.d.ts",
+      "import": "./dist/eve/tools/identity/my-access.js"
+    },
+    "./eve/tools/catalog/search-products": {
+      "types": "./dist/eve/tools/catalog/search-products.d.ts",
+      "import": "./dist/eve/tools/catalog/search-products.js"
+    },
+    "./eve/tools/catalog/generate-random-chart": {
+      "types": "./dist/eve/tools/catalog/generate-random-chart.d.ts",
+      "import": "./dist/eve/tools/catalog/generate-random-chart.js"
+    },
+    "./eve/tools/catalog/generate-image": {
+      "types": "./dist/eve/tools/catalog/generate-image.d.ts",
+      "import": "./dist/eve/tools/catalog/generate-image.js"
+    },
+    "./eve/tools/admin/manage-team-members": {
+      "types": "./dist/eve/tools/admin/manage-team-members.d.ts",
+      "import": "./dist/eve/tools/admin/manage-team-members.js"
+    },
+    "./eve/tools/admin/manage-groups": {
+      "types": "./dist/eve/tools/admin/manage-groups.d.ts",
+      "import": "./dist/eve/tools/admin/manage-groups.js"
+    },
+    "./eve/tools/admin/query-tasks": {
+      "types": "./dist/eve/tools/admin/query-tasks.d.ts",
+      "import": "./dist/eve/tools/admin/query-tasks.js"
+    },
+    "./eve/tools/admin/assign-tasks": {
+      "types": "./dist/eve/tools/admin/assign-tasks.d.ts",
+      "import": "./dist/eve/tools/admin/assign-tasks.js"
+    },
+    "./eve/tools/admin/get-workspace-usage": {
+      "types": "./dist/eve/tools/admin/get-workspace-usage.d.ts",
+      "import": "./dist/eve/tools/admin/get-workspace-usage.js"
+    },
+    "./agent-admin": {
+      "types": "./dist/agent-admin.d.ts",
+      "import": "./dist/agent-admin.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node ./scripts/build-atomic.mjs",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "clean": "rm -rf dist dist.tmp dist.old"
+  },
+  "keywords": [
+    "robotrock",
+    "human-in-the-loop",
+    "approval",
+    "workflow",
+    "trigger.dev",
+    "vercel-ai-sdk",
+    "ai-sdk"
+  ],
+  "license": "MIT",
+  "homepage": "https://docs.robotrock.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robotrock-io/robotrock-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robotrock-io/robotrock-sdk/issues"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@opentelemetry/api": "^1.9.1",
+    "@openrouter/ai-sdk-provider": "^3.0.0",
+    "@trigger.dev/sdk": "4.5.4",
+    "@types/node": "^26.1.1",
+    "ai": "^7.0.22",
+    "eslint": "^10.7.0",
+    "eve": "^0.22.5",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "workflow": "^4.6.0"
+  },
+  "peerDependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@openrouter/ai-sdk-provider": "^3.0.0",
+    "@trigger.dev/sdk": "^3.0.0 || ^4.0.0",
+    "ai": "^5.0.0 || ^6.0.0 || ^7.0.0",
+    "workflow": "^4.0.0",
+    "eve": "^0.22.0"
+  },
+  "peerDependenciesMeta": {
+    "@opentelemetry/api": {
+      "optional": true
+    },
+    "@openrouter/ai-sdk-provider": {
+      "optional": true
+    },
+    "@trigger.dev/sdk": {
+      "optional": true
+    },
+    "ai": {
+      "optional": true
+    },
+    "workflow": {
+      "optional": true
+    },
+    "eve": {
+      "optional": true
+    }
+  }
+}
